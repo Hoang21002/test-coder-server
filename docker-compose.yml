@@ -6,6 +6,9 @@ services:
     ports:
       - "8080:8080"
     command: ["coder", "server"]
+    environment:
+      - CODER_PASSWORD=${CODER_PASSWORD}
+      - CODER_HOST=${CODER_HOST}
 
   nodejs-app:
     build:
