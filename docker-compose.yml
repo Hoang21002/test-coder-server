@@ -1,0 +1,15 @@
+version: "3"
+services:
+  coder:
+    image: ghcr.io/coder/coder:latest
+    container_name: coder_server
+    ports:
+      - "8080:8080"
+    command: ["coder", "server"]
+
+  nodejs-app:
+    build:
+      context: .
+    container_name: nodejs_app
+    ports:
+      - "3000:3000"
